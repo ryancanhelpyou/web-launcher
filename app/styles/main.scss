@@ -13,6 +13,9 @@
  */
 @import 'components/components';
 
+@import 'bourbon';
+@import 'neat';
+
 html,
 body {
   width: 100%;
@@ -363,4 +366,22 @@ main {
   font-weight: 700;
   src: url(/fonts/RobotoCondensed-BoldItalic.eot);
   src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'), url(/fonts/RobotoCondensed-BoldItalic.eot) format('embedded-opentype'), url(/fonts/RobotoCondensed-BoldItalic.woff) format('woff');
+}
+
+.hej{
+  height: 20px;
+  width: 20px;
+  background-color: #0000ee;
+  @include triangle(12px, gray, down);
+  @include triangle(12px 6px, gray lavender, up-left);
+}
+.hej:hover {
+  // Animation shorthand works the same as the CSS3 animation shorthand
+  @include animation(scale 1.0s ease-in, slide 2.0s ease);
+
+  // The above outputs the same CSS as using independent, granular mixins.
+  @include animation-name(scale, slide);
+  @include animation-duration(2s);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);
 }

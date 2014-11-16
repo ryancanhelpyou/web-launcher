@@ -1,0 +1,28 @@
+{
+  "name": "web-launcher",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lkabell/web-launcher",
+  "authors": [
+    "Lasse Kabell <lassek@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "boilerplate",
+    "project",
+    "sass",
+    "jade",
+    "google",
+    "bourbon"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
