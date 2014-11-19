@@ -10,25 +10,16 @@ var pagespeed = require('psi');
 var reload = browserSync.reload;
 
 var AUTOPREFIXER_BROWSERS = [
-    'ie >= 10',
+    'ie >= 9',
     'ie_mob >= 10',
     'ff >= 30',
     'chrome >= 34',
     'safari >= 7',
     'opera >= 23',
     'ios >= 7',
-    'android >= 4.4',
+    'android >= 4.0',
     'bb >= 10'
 ];
-
-// Lint JavaScript
-gulp.task('jshint', function () {
-    return gulp.src('app/scripts/**/*.js')
-        .pipe(reload({stream: true, once: true}))
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'))
-        .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
 
 // Optimize Images
 gulp.task('images', function () {
@@ -37,8 +28,7 @@ gulp.task('images', function () {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('dist/images'))
-        .pipe($.size({title: 'images'}));
+        .pipe(gulp.dest('dist/images'));
 });
 
 // Copy All Files At The Root Level (app)
@@ -51,14 +41,12 @@ gulp.task('copy', function () {
     ], {
         dot: true
     }).pipe(gulp.dest('dist'))
-        .pipe($.size({title: 'copy'}));
 });
 
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
     return gulp.src(['app/fonts/**'])
         .pipe(gulp.dest('dist/fonts'))
-        .pipe($.size({title: 'fonts'}));
 });
 
 // Compile and Automatically Prefix Stylesheets
@@ -78,75 +66,36 @@ gulp.task('styles', function () {
             .on('error', console.error.bind(console))
     )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest('.tmp/styles'))
-        // Concatenate And Minify Styles
-        .pipe($.if('*.css', $.csso()))
+        //.pipe($.csso())
         .pipe(gulp.dest('dist/styles'))
-        .pipe($.size({title: 'styles'}));
 });
 
-// Scan Your HTML For Assets & 1 Them
-gulp.task('html', function () {
-    var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+gulp.task('templates', function () {
+    var YOUR_LOCALS = {};
 
-    return gulp.src('app/**/*.jade')
+    return gulp.src('./app/*.jade')
         .pipe($.jade({
-            pretty: true
-            // locals: YOUR_LOCALS
+            locals: YOUR_LOCALS
         }))
-        .pipe(assets)
-        // Concatenate And Minify JavaScript
-        .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
-        // Remove Any Unused CSS
-        // Note: If not using the Style Guide, you can delete it from
-        // the next line to only include styles your project uses.
-        .pipe($.if('*.css', $.uncss({
-            html: [
-                'app/index.html',
-                'app/styleguide.html'
-            ],
-            // CSS Selectors for UnCSS to ignore
-            ignore: [
-                /.navdrawer-container.open/,
-                /.app-bar.open/
-            ]
-        })))
-        // Concatenate And Minify Styles
-        // In case you are still using useref build blocks
-        .pipe($.if('*.css', $.csso()))
-        .pipe(assets.restore())
-        .pipe($.useref())
-        // Update Production Style Guide Paths
-        .pipe($.replace('components/components.css', 'components/main.min.css'))
-        // Minify Any HTML
-        .pipe($.if('*.html', $.minifyHtml()))
-        // Output Files
-        .pipe(gulp.dest('dist'))
-        .pipe($.size({title: 'html'}));
+        .pipe(gulp.dest('./dist/'))
+});
+
+gulp.task('js', function () {
+    return gulp.src("./app/scripts/*.js")
+        .pipe($.uglify()
+            .on('error', function (error) {
+                console.warn(error.message);
+            })
+    ).pipe($.concat('main.min.js'))
+        .pipe(gulp.dest("./dist/scripts"))
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
-
-// Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function () {
-    browserSync({
-        notify: false,
-        // Run as an https by uncommenting 'https: true'
-        // Note: this uses an unsigned certificate which on first access
-        //       will present a certificate warning in the browser.
-        // https: true,
-        server: ['.tmp', 'app']
-    });
-
-    gulp.watch(['app/**/*.jade'], ["html",reload]);
-    gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-    gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-    gulp.watch(['app/images/**/*'], reload);
-});
+gulp.task('clean', del.bind(null, ['dist']));
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+// Watch Files For Changes & Reload
+gulp.task('serve', ['default'], function () {
     browserSync({
         notify: false,
         // Run as an https by uncommenting 'https: true'
@@ -155,15 +104,15 @@ gulp.task('serve:dist', ['default'], function () {
         // https: true,
         server: 'dist'
     });
-    gulp.watch(['app/**/*.jade'], ["html",reload]);
+    gulp.watch(['app/**/*.jade'], ["templates", reload]);
     gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-    gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+    gulp.watch(['app/scripts/**/*.js'], ['js', reload]);
     gulp.watch(['app/images/**/*'], reload);
 });
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-    runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+    runSequence('styles', ['js', 'templates', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
