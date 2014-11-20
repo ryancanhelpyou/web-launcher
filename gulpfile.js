@@ -90,6 +90,16 @@ gulp.task('js', function () {
         .pipe(gulp.dest("./dist/scripts"))
 });
 
+gulp.task('vendor', function() {
+    return gulp.src([
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/modernizr/modernizr.js'
+    ])
+        .pipe($.concat('vendor.js'))
+        .pipe($.uglify())
+        .pipe( gulp.dest("./dist/scripts"));
+});
+
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['dist']));
 
