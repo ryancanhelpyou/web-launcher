@@ -7,7 +7,7 @@
 .articles-section {
   background: $colorGrayBackground;
   text-align: center;
-  padding: $lineHeight 0 $lineHeight*4;
+  padding: $base-line-height 0 $base-line-height*4;
 }
 
 .articles-count {
@@ -17,9 +17,9 @@
 }
 
 .article-section__icon {
-  top: -($lineHeight);
+  top: -($base-line-height);
 
   @include medium {
-    top: -($lineHeight + $lineHeight/2);
+    top: -($base-line-height + $base-line-height/2);
   }
 }

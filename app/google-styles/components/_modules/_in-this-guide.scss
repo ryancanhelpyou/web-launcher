@@ -5,11 +5,11 @@
 **/
 
 .in-this-guide {
-  margin-top: - $lineHeight * 3;
+  margin-top: - $base-line-height * 3;
 }
 
 .in-this-guide__title {
   @include type--medium(true);
   font-family: $fontHighlight;
-  margin-bottom: $lineHeight;
+  margin-bottom: $base-line-height;
 }

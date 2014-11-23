@@ -7,13 +7,13 @@
 .page--styleguide {
 
   .styleguide__module-title {
-    margin-bottom: $lineHeight;
+    margin-bottom: $base-line-height;
   }
 
   section {
-    margin-bottom: $lineHeight*2;
+    margin-bottom: $base-line-height*2;
     border-bottom: 1px solid #ccc;
-    padding-bottom: $lineHeight*3 - 1;
+    padding-bottom: $base-line-height*3 - 1;
 
   }
 
@@ -21,8 +21,8 @@
     text-align: center;
 
     li {
-      border-bottom: $lineHeight*2 solid;
-      margin-bottom: $lineHeight;
+      border-bottom: $base-line-height*2 solid;
+      margin-bottom: $base-line-height;
       position: relative;
     }
   }
@@ -34,7 +34,7 @@
   .styleguide__lists {
     ul,
     ol {
-      margin-bottom: $lineHeight;
+      margin-bottom: $base-line-height;
     }
   }
 
@@ -51,16 +51,16 @@
 }
 
 .demo {
-  margin-bottom: $lineHeight;
-  margin-top: $lineHeight;
+  margin-bottom: $base-line-height;
+  margin-top: $base-line-height;
 }
 
 .demo {
   [class*="g-"] {
     background-color: $colorGrayLight;
     position: relative;
-    margin-bottom: $lineHeight;
-    min-height: $lineHeight*6;
+    margin-bottom: $base-line-height;
+    min-height: $base-line-height*6;
 
     &::before,
     &::after {

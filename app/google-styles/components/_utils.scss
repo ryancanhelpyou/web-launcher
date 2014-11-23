@@ -70,7 +70,7 @@
   $fontHuge: 110px !default;
 
   // Defining baseline line height
-  $lineHeight: 26px !default;
+  $base-line-height: 26px !default;
 
   // Defining animation easings
   $animationEasing: cubic-bezier(0.455, 0.030, 0.515, 0.955) !default;
@@ -81,7 +81,7 @@
 
 /*==========  FUNCTIONS  ==========*/
 
-  @function leading($size, $context: $lineHeight) {
+  @function leading($size, $context: $base-line-height) {
     @return  $context / $size + em;
   }
 
@@ -322,7 +322,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      line-height: $lineHeight;
+      line-height: $base-line-height;
 
     }
   }
@@ -357,7 +357,7 @@
         display: inline-block;
         padding-right: 10px;
         font-family: $fontIcon;
-        line-height: ($lineHeight) - 1; // remove 1px from line-height to fix baseline alignment
+        line-height: ($base-line-height) - 1; // remove 1px from line-height to fix baseline alignment
         font-size: $fontSmall;
         content: $linkIcon;
       }

@@ -42,7 +42,7 @@
 .icon-circle--large {
   margin-top: 0;
   margin-bottom: 0;
-  padding: $lineHeight;
+  padding: $base-line-height;
   position: relative;
 
   i {
@@ -54,11 +54,11 @@
   }
 
   @include medium {
-    padding: ($lineHeight + $lineHeight/2) - 2;
+    padding: ($base-line-height + $base-line-height/2) - 2;
     border: 2px solid #ffffff;
 
     a & {
-      padding: ($lineHeight + $lineHeight/2) - 1;
+      padding: ($base-line-height + $base-line-height/2) - 1;
 
       box-shadow: inset 0px 0px 0px 1px rgba(#ffffff, .42);
       border: 1px solid;
@@ -84,7 +84,7 @@
   position: relative;
   border-radius: 100%;
   font-size: 0;
-  padding: $lineHeight/2;
+  padding: $base-line-height/2;
   margin: 0 auto;
 
   @include medium {

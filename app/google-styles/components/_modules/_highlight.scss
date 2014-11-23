@@ -6,8 +6,8 @@
 
 .highlight-module {
   overflow: hidden;
-  margin-top: $lineHeight * 2;
-  margin-bottom: $lineHeight;
+  margin-top: $base-line-height * 2;
+  margin-bottom: $base-line-height;
   position: relative;
 
   &::after {
@@ -31,22 +31,22 @@
 
 .highlight-module__container {
   @include container;
-  padding-bottom: $lineHeight * 3;
+  padding-bottom: $base-line-height * 3;
   z-index: 1;
   @include highlight-symbol();
 
   @include medium {
-    padding-bottom: $lineHeight * 2;
+    padding-bottom: $base-line-height * 2;
   }
 
   @include wide {
-    min-height: $lineHeight * 8;
+    min-height: $base-line-height * 8;
   }
 }
 
 .highlight-module__title {
   @include type--huge;
-  padding-top: $lineHeight;
+  padding-top: $base-line-height;
 
   @include wide {
     @include type--xxlarge;
@@ -91,13 +91,13 @@
 /*==========  CODE  ==========*/
 .highlight-module--code {
   overflow: visible;
-  margin-bottom: $lineHeight * 2;
+  margin-bottom: $base-line-height * 2;
 
   pre {
     margin: 0;
-    padding-top: $lineHeight;
+    padding-top: $base-line-height;
     font-size: $fontBase - 2;
-    line-height: $lineHeight;
+    line-height: $base-line-height;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -122,7 +122,7 @@
 
   .highlight-module__cta {
     position: absolute;
-    bottom: -$lineHeight;
+    bottom: -$base-line-height;
   }
 
 }
@@ -162,7 +162,7 @@
 .highlight-module--inline {
   color: $colorText;
   overflow: visible;
-  margin: $lineHeight 0 0;
+  margin: $base-line-height 0 0;
 
   & .highlight-module__container {
     padding-bottom: 0;
@@ -179,7 +179,7 @@
     border-left-width: 0;
     border-right-width: 0;
     margin-bottom: -2px; // Offsetting 2px to considerate border top/bottom - baseline rules.
-    padding:  0 0 $lineHeight;
+    padding:  0 0 $base-line-height;
   }
 
   & .highlight-module__title {

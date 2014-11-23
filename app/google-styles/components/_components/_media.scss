@@ -13,7 +13,7 @@ object {
 img {
 
   .content & {
-    margin-top: $lineHeight;
-    margin-bottom: $lineHeight;
+    margin-top: $base-line-height;
+    margin-bottom: $base-line-height;
   }
 }

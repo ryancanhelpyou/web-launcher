@@ -13,7 +13,7 @@
 
 .list--columns {
   border-bottom: 1px solid #ccc;
-  padding-bottom: $lineHeight - 1;
+  padding-bottom: $base-line-height - 1;
   margin-bottom: 1px;
 
   @include medium {

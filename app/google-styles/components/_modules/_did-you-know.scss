@@ -13,7 +13,7 @@
   }
 
   .cta--primary {
-    margin-top: $lineHeight;
+    margin-top: $base-line-height;
     font-weight: 500;
   }
 
@@ -25,8 +25,9 @@
 }
 
 .did-you-know__symbol {
-  padding-bottom: $lineHeight*12;
-  @include medium {padding-bottom: $lineHeight}
+  padding-bottom: $base-line-height*12;
+  @include medium {padding-bottom: $base-line-height
+  }
 
   &::after {
     content: $icon-question;

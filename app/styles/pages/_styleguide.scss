@@ -6,14 +6,19 @@
 
 .page--styleguide {
 
+  .container{
+    @include outer-container();
+    @include pad();
+  }
+
   .styleguide__module-title {
-    margin-bottom: $lineHeight;
+    margin-bottom: $base-line-height;
   }
 
   section {
-    margin-bottom: $lineHeight*2;
+    margin-bottom: $base-line-height*2;
     border-bottom: 1px solid #ccc;
-    padding-bottom: $lineHeight*3 - 1;
+    padding-bottom: $base-line-height*3 - 1;
 
   }
 
@@ -21,8 +26,8 @@
     text-align: center;
 
     li {
-      border-bottom: $lineHeight*2 solid;
-      margin-bottom: $lineHeight;
+      border-bottom: $base-line-height*2 solid;
+      margin-bottom: $base-line-height;
       position: relative;
     }
   }
@@ -34,7 +39,7 @@
   .styleguide__lists {
     ul,
     ol {
-      margin-bottom: $lineHeight;
+      margin-bottom: $base-line-height;
     }
   }
 
@@ -44,27 +49,27 @@
   }
 
   .styleguide__theme-block {
-    background: $colorLayouts;
+    background: $base-background-color;
     padding: 0 13px;
   }
 
 }
 
 .demo {
-  margin-bottom: $lineHeight;
-  margin-top: $lineHeight;
+  margin-bottom: $base-line-height;
+  margin-top: $base-line-height;
 }
 
 .demo {
   [class*="g-"] {
-    background-color: $colorGrayLight;
+    background-color: $color-grey-light;
     position: relative;
-    margin-bottom: $lineHeight;
-    min-height: $lineHeight*6;
+    margin-bottom: $base-line-height;
+    min-height: $base-line-height*6;
 
     &::before,
     &::after {
-      @include type--small;
+      font-size: $base-font-size;
       display: block;
       margin: 0 10px;
     }
@@ -79,4 +84,61 @@
       word-spacing: 15px;
     }
   }
+}
+
+/**
+*
+* Editorial Header
+*
+**/
+
+.summary-header {
+  background-color: $color-primary;
+  padding-bottom: $base-line-height * 3;
+  color: #ffffff;
+  margin-bottom: $base-line-height;
+  box-shadow: inset 0 2px 0 0 #fff;
+
+  .breadcrumbs__link {
+    color: #ffffff;
+  }
+  .summary-header__title{
+    font-size: 4em;
+    margin: 0.5em 0 0.75em;
+  }
+
+}
+
+.summary-header__anchor-list {
+  margin-top: $base-line-height * 2;
+}
+
+
+.summary-header__anchors-item {
+  counter-increment: list;
+  content: "0" counter(list);
+  & a {
+    color: #ffffff;
+  }
+}
+
+pre {
+  background: $color-grey-superlight;
+  padding: 13px;
+}
+
+/**
+*
+* subsection__title
+*
+**/
+
+.subsection-title {
+  color: $color-grey;
+  margin-top: $base-line-height * 2;
+}
+
+.subsection-number {
+  padding-top: 0;
+  display: block;
 }

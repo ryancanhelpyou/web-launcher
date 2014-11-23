@@ -44,7 +44,7 @@
 }
 
 .editorial-header .tag{
-  padding-top: $lineHeight*2;
+  padding-top: $base-line-height*2;
 }
 
 .editorial-header__subtitle {
@@ -52,13 +52,13 @@
   padding-top: 0;
   @include medium {
     padding-top: 0;
-    padding-bottom: $lineHeight;
+    padding-bottom: $base-line-height;
   }
   color: $colorBlue;
 }
 
 .editorial-header__toc {
-  margin-top: $lineHeight;
+  margin-top: $base-line-height;
 
   ol {
     padding-top: 0;
