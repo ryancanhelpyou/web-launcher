@@ -1,0 +1,24 @@
+.grid-test{
+  @include outer-container();
+
+  .item{
+
+    @include media($medium-viewport) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($large-viewport) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+    @include media($small-viewport) {
+      @include span-columns(12);
+    }
+
+    height: 100px;
+    @include background(linear-gradient(red, green) left repeat);
+
+  }
+}

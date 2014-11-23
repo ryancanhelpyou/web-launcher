@@ -6,14 +6,18 @@
 
 // Utilities
 // ---------------------------------------------
-//@import 'utilities/normalize';
+@import 'utilities/normalize';
 //@import 'utilities/grid';
-
 
 
 // Modules
 // ---------------------------------------------
+@import "modules/header";
 
+
+// Pages
+// ---------------------------------------------
+@import "pages/index";
 
 // Shame
 //@import 'shame';

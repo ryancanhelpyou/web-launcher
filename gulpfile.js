@@ -122,7 +122,7 @@ gulp.task('serve', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-    runSequence('styles', ['js', 'templates', 'images', 'fonts', 'copy'], cb);
+    runSequence('styles', ['js', 'vendor', 'templates', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
