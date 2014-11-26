@@ -1,6 +1,7 @@
 // Typography
 $base-font-family: $helvetica;
 $header-font-family: $base-font-family;
+$base-font-weight: 300;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -21,7 +22,6 @@ $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;
 
 // Colors
-
 $color-primary: #4BBCC6;
 $color-secondary: #E94C05;
 $color-tertiary: #85BC1F;
@@ -29,9 +29,10 @@ $color-tertiary: #85BC1F;
 $color-light: darken(#FFFFFF, 1);
 $color-dark: #000;
 
-$color-grey: #3A3A39;
-$color-grey-light: lighten($color-grey, 35%);
-$color-grey-superlight: lighten($color-grey, 68%);
+$color-grey: #909090;
+$color-grey-dark: darken($color-grey, 20%);
+$color-grey-light: lighten($color-grey, 30%);
+$color-grey-superlight: lighten($color-grey, 40%);
 
 //$color-primary: #477DCA;
 
@@ -39,7 +40,7 @@ $color-grey-superlight: lighten($color-grey, 68%);
 $base-background-color: $color-light;
 
 // Font Colors
-$base-font-color: $color-grey;
+$base-font-color: $color-grey-dark;
 $base-accent-color: $color-primary;
 
 // Link Colors
@@ -47,6 +48,8 @@ $base-link-color: $base-accent-color;
 $hover-link-color: darken($base-accent-color, 15);
 $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
+$base-button-color--secondary: $color-secondary;
+$hover-button-color--secondary: darken($base-button-color--secondary, 15);
 
 // Border color
 $base-border-color: $color-grey-light;

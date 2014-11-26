@@ -16,7 +16,7 @@ button,
 input,
 textarea,
 *:after,
-*:before,{
+*:before, {
   font-smoothing: antialiased;
 }
 
@@ -38,8 +38,15 @@ html {
   background-color: $base-background-color;
 }
 
+main,
 .main {
-  min-height: 600px;
+  @include outer-container;
+  @include pad();
+  min-height: 100%;
+  position: relative;
+  @include media($medium-screen-and-down) {
+    margin-top: 60px;
+  }
 }
 
 .container {
@@ -65,7 +72,7 @@ fieldset,
 figure,
 pre,
 hr {
-  margin-bottom: $spacing;
+  margin-bottom: $base-spacing;
   margin-top: 0;
 }
 

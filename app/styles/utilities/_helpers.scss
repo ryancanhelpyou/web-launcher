@@ -1,0 +1,35 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flush {
+  margin-bottom: 0 !important;
+}
+
+.slim {
+  margin-bottom: $base-spacing/2 !important;
+}
+
+.spacing{
+  margin-bottom: $base-spacing !important;
+}
+
+.landmark {
+  margin-bottom: $base-spacing*2 !important;
+}

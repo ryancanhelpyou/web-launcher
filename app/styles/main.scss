@@ -3,17 +3,27 @@
 @import "bourbon";
 @import "base/grid-settings";
 @import "neat";
+@import 'utilities/outer-container'; //Overwriting the outer-container mixin in node-neat, since it can't take the $local-max-width parameter
 @import "base/base";
 
+// Bourbon prefix-setting (gulp-autoprefixer is prefixing for us)
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      false;
+
+@import "base/global";
 
 // Utilities
 // ---------------------------------------------
-//@import 'utilities/grid';
+@import 'utilities/helpers';
 
 
 // Modules
 // ---------------------------------------------
 @import "modules/header";
+@import "modules/table-borders";
 
 
 // Pages
@@ -24,8 +34,5 @@
 // Shame
 //@import 'shame';
 
-$prefix-for-webkit:    false;
-$prefix-for-mozilla:   false;
-$prefix-for-microsoft: false;
-$prefix-for-opera:     false;
-$prefix-for-spec:      false;
+
+

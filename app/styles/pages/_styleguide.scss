@@ -6,9 +6,12 @@
 
 .page--styleguide {
 
-  .container{
-    @include outer-container();
+  .container {
+    @include outer-container(864px);
     @include pad();
+  }
+  .container--snippet-toggle {
+    padding-bottom: 0;
   }
 
   .styleguide__module-title {
@@ -16,19 +19,56 @@
   }
 
   section {
-    margin-bottom: $base-line-height*2;
+    margin-bottom: $base-line-height*2em;
     border-bottom: 1px solid #ccc;
-    padding-bottom: $base-line-height*3 - 1;
+    padding-bottom: $base-line-height * 2em;
 
+  }
+  #snippet-toggle {
+    font-weight: 300;
   }
 
   .styleguide__color-list {
     text-align: center;
+    @include outer-container;
 
     li {
-      border-bottom: $base-line-height*2 solid;
-      margin-bottom: $base-line-height;
+      @include span-columns(6);
+      @include omega(2n);
+      border-bottom: $base-line-height*2em solid;
+      margin-bottom: $base-line-height*1em;
       position: relative;
+
+      @include media($small-screen) {
+        @include span-columns(12);
+      }
+      &.color--dark{
+        border-color: $color-dark;
+      }
+      &.color--grey-dark{
+        border-color: $color-grey-dark;
+      }
+      &.color--grey{
+        border-color: $color-grey;
+      }
+      &.color--grey-light{
+        border-color: $color-grey-light;
+      }
+      &.color--grey-superlight{
+        border-color: $color-grey-superlight;
+      }
+      &.color--light{
+        border-color: $color-light;
+      }
+      &.color--primary{
+        border-color: $color-primary;
+      }
+      &.color--secondary{
+        border-color: $color-secondary;
+      }
+      &.color--tertiary{
+        border-color: $color-tertiary;
+      }
     }
   }
 
@@ -55,36 +95,36 @@
 
 }
 
-.demo {
-  margin-bottom: $base-line-height;
-  margin-top: $base-line-height;
-}
-
-.demo {
-  [class*="g-"] {
-    background-color: $color-grey-light;
-    position: relative;
-    margin-bottom: $base-line-height;
-    min-height: $base-line-height*6;
-
-    &::before,
-    &::after {
-      font-size: $base-font-size;
-      display: block;
-      margin: 0 10px;
-    }
-
-    &::before {
-      content: 'HTML classes: ';
-      font-weight: 700;
-    }
-
-    &::after {
-      content: attr(class);
-      word-spacing: 15px;
-    }
-  }
-}
+//.demo {
+//  margin-bottom: $base-line-height;
+//  margin-top: $base-line-height;
+//}
+//
+//.demo {
+//  [class*="g-"] {
+//    background-color: $color-grey-light;
+//    position: relative;
+//    margin-bottom: $base-line-height;
+//    min-height: $base-line-height*6;
+//
+//    &::before,
+//    &::after {
+//      font-size: $base-font-size;
+//      display: block;
+//      margin: 0 10px;
+//    }
+//
+//    &::before {
+//      content: 'HTML classes: ';
+//      font-weight: 700;
+//    }
+//
+//    &::after {
+//      content: attr(class);
+//      word-spacing: 15px;
+//    }
+//  }
+//}
 
 /**
 *
@@ -94,15 +134,15 @@
 
 .summary-header {
   background-color: $color-primary;
-  padding-bottom: $base-line-height * 3;
+  padding-bottom: $base-line-height * 2em;
   color: #ffffff;
-  margin-bottom: $base-line-height;
+  margin-bottom: $base-line-height * 1em;
   box-shadow: inset 0 2px 0 0 #fff;
 
   .breadcrumbs__link {
     color: #ffffff;
   }
-  .summary-header__title{
+  .summary-header__title {
     font-size: 4em;
     margin: 0.5em 0 0.75em;
   }
@@ -111,14 +151,30 @@
 
 .summary-header__anchor-list {
   margin-top: $base-line-height * 2;
+  position: relative;
+  left: 2em;
 }
-
 
 .summary-header__anchors-item {
   counter-increment: list;
-  content: "0" counter(list);
+
   & a {
     color: #ffffff;
+    font-weight: 300;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &::before {
+    content: "0" counter(list);
+    //    padding-right: 1em;
+    font-weight: normal;
+    position: absolute;
+    left: -2em;
+  }
+  &:nth-child(10n) ~ li::before,
+  &:nth-child(10n)::before {
+    content: counter(list);
   }
 }
 
@@ -134,11 +190,19 @@ pre {
 **/
 
 .subsection-title {
-  color: $color-grey;
-  margin-top: $base-line-height * 2;
+  color: $base-font-color;
+  margin-top: $base-line-height * 1em;
+  margin-bottom: 1em;
 }
 
 .subsection-number {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
   padding-top: 0;
   display: block;
+  font-size: 1rem;
+  h2 & {
+    margin-bottom: 0;
+  }
 }
+

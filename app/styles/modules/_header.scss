@@ -1,7 +1,3 @@
-body {
-  position: relative;
-}
-
 body.open {
   overflow: hidden;
 }
@@ -151,6 +147,7 @@ main {
   border-width: 1px;
   border-color: white;
   padding: 0;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .navdrawer-container ul li::before {
@@ -170,17 +167,11 @@ main {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-main {
-  @include outer-container;
-  min-height: 100%;
-  position: relative;
-  margin-top: 60px;
-}
-
 /** Larger Screens - desktops and tablets **/
-@include media($large-viewport) {
+@include media($large-screen) {
   .app-bar {
     position: relative;
+
   }
 
   .app-bar.open,
@@ -193,6 +184,7 @@ main {
     height: 130px;
     box-sizing: border-box;
     background-color: $color-primary;
+    @include pad(0 default);
   }
 
   .app-bar .logo {
@@ -235,6 +227,7 @@ main {
 
   .navdrawer-container ul {
     @include outer-container;
+    @include pad(0 default);
     display: flex;
     flex-direction: row;
   }
@@ -243,7 +236,4 @@ main {
     border: none;
   }
 
-  body {
-    overflow-y: scroll;
-  }
 }

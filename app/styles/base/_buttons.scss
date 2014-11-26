@@ -9,3 +9,11 @@ input[type="submit"],
   vertical-align: middle;
   white-space: nowrap;
 }
+
+.button--secondary{
+  @extend button;
+  background-color: $base-button-color--secondary;
+  &:hover{
+    background-color: $hover-button-color--secondary;
+  }
+}

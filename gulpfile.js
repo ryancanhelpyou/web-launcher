@@ -60,10 +60,10 @@ gulp.task('styles', function () {
         .pipe($.changed('styles', {extension: '.scss'}))
         .pipe($.sass({
             includePaths: require('node-neat').includePaths,
+            errLogToConsole: true,
             style: 'expanded',
             precision: 10
-        })
-            .on('error', console.error.bind(console))
+        }).on('error', console.error.bind(console))
     )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
         //.pipe($.csso())
@@ -90,14 +90,14 @@ gulp.task('js', function () {
         .pipe(gulp.dest("./dist/scripts"))
 });
 
-gulp.task('vendor', function() {
+gulp.task('vendor', function () {
     return gulp.src([
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/modernizr/modernizr.js'
     ])
         .pipe($.concat('vendor.js'))
         .pipe($.uglify())
-        .pipe( gulp.dest("./dist/scripts"));
+        .pipe(gulp.dest("./dist/scripts"));
 });
 
 // Clean Output Directory
@@ -118,6 +118,7 @@ gulp.task('serve', ['default'], function () {
     gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
     gulp.watch(['app/scripts/**/*.js'], ['js', reload]);
     gulp.watch(['app/images/**/*'], reload);
+    gulp.watch(['app/*.html'], ['copy', reload]);
 });
 
 // Build Production Files, the Default Task

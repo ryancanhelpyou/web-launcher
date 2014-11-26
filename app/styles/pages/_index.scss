@@ -4,17 +4,17 @@
   .item{
     margin-bottom: flex-gutter();
     @include pad();
-    @include media($medium-viewport) {
+    @include media($medium-screen) {
       @include span-columns(6);
       @include omega(2n);
     }
 
-    @include media($large-viewport) {
+    @include media($large-screen) {
       @include span-columns(4);
       @include omega(3n);
     }
 
-    @include media($small-viewport) {
+    @include media($small-screen) {
       @include span-columns(12);
     }
 
