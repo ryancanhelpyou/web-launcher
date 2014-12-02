@@ -7,6 +7,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
+var server = require('./server');
 var reload = browserSync.reload;
 
 var AUTOPREFIXER_BROWSERS = [
@@ -104,7 +105,6 @@ gulp.task('vendor', function () {
 gulp.task('clean', del.bind(null, ['dist']));
 
 // Build and serve the output from the dist build
-// Watch Files For Changes & Reload
 gulp.task('serve', ['default'], function () {
     browserSync({
         notify: false,
@@ -114,6 +114,10 @@ gulp.task('serve', ['default'], function () {
         // https: true,
         server: 'dist'
     });
+});
+
+// Watch Files For Changes & Reload
+gulp.task('watch', function () {
     gulp.watch(['app/**/*.jade'], ["templates", reload]);
     gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
     gulp.watch(['app/scripts/**/*.js'], ['js', reload]);
@@ -121,8 +125,15 @@ gulp.task('serve', ['default'], function () {
     gulp.watch(['app/*.html'], ['copy', reload]);
 });
 
+
 // Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('default', ['build'], function (cb) {
+    gulp.start('serve');
+    gulp.start('watch');
+});
+
+// Build Production Files, the Default Task
+gulp.task('build', ['clean'], function (cb) {
     runSequence('styles', ['js', 'vendor', 'templates', 'images', 'fonts', 'copy'], cb);
 });
 
@@ -136,6 +147,16 @@ gulp.task('pagespeed', pagespeed.bind(null, {
     url: 'https://example.com',
     strategy: 'mobile'
 }));
+
+// --- Heroku Task. Is only run when deployed to heroku.
+gulp.task('heroku', function () {
+    gulp.start('build');
+    var port = process.env.PORT || 3000;
+
+    server.listen(port, function () {
+        console.log("Listening on " + port);
+    });
+});
 
 // Load custom tasks from the `tasks` directory
 try {
