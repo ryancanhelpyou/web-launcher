@@ -55,12 +55,10 @@ gulp.task('styles', function () {
     // For best performance, don't add Sass partials to `gulp.src`
     return gulp.src([
         'app/styles/*.scss',
-        'app/styles/**/*.css',
-        'app/styles/components/components.scss'
+        'app/styles/**/*.css'
     ])
         .pipe($.changed('styles', {extension: '.scss'}))
         .pipe($.sass({
-            includePaths: require('node-neat').includePaths,
             errLogToConsole: true,
             style: 'expanded',
             precision: 10
@@ -76,28 +74,32 @@ gulp.task('templates', function () {
 
     return gulp.src('./app/*.jade')
         .pipe($.jade({
-            locals: YOUR_LOCALS
+            locals: YOUR_LOCALS,
+            pretty: true
         }))
         .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('js', function () {
     return gulp.src("./app/scripts/*.js")
-        .pipe($.uglify()
-            .on('error', function (error) {
-                console.warn(error.message);
-            })
-    ).pipe($.concat('main.min.js'))
+        //.pipe($.uglify()
+        //    .on('error', function (error) {
+        //        console.warn(error.message);
+        //    })
+        //)
+        .pipe($.concat('main.min.js'))
         .pipe(gulp.dest("./dist/scripts"))
 });
 
 gulp.task('vendor', function () {
     return gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/modernizr/modernizr.js'
+        'bower_components/jquery/jquery.min.js',
+        'bower_components/modernizr/modernizr.js',
+        'bower_components/bigtext/dist/bigtext.js',
+        'bower_components/jquery-ui/jquery-ui.js'
     ])
         .pipe($.concat('vendor.js'))
-        .pipe($.uglify())
+        //.pipe($.uglify())
         .pipe(gulp.dest("./dist/scripts"));
 });
 

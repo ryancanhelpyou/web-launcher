@@ -1,9 +1,8 @@
 @import 'utilities/normalize';
 
-@import "bourbon";
+@import "../../bower_components/bourbon/dist/bourbon";
 @import "base/grid-settings";
-@import "neat";
-@import 'utilities/outer-container'; //Overwriting the outer-container mixin in node-neat, since it can't take the $local-max-width parameter
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
 @import "base/base";
 
 // Bourbon prefix-setting (gulp-autoprefixer is prefixing for us)
