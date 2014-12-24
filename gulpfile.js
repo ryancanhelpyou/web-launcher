@@ -136,7 +136,7 @@ gulp.task('default', ['build'], function (cb) {
 
 // Build Production Files, the Default Task
 gulp.task('build', ['clean'], function (cb) {
-    runSequence('styles', ['js', 'vendor', 'templates', 'images', 'fonts', 'copy'], cb);
+    runSequence('styles', ['js', 'vendor', 'templates', 'images', 'fonts'], 'copy', cb);
 });
 
 // Run PageSpeed Insights
