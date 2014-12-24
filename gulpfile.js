@@ -105,7 +105,7 @@ gulp.task('vendor', function () {
 gulp.task('clean', del.bind(null, ['dist']));
 
 // Build and serve the output from the dist build
-gulp.task('serve', ['default'], function () {
+gulp.task('serve', function () {
     browserSync({
         notify: false,
         // Run as an https by uncommenting 'https: true'
