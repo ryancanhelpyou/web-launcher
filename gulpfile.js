@@ -88,7 +88,7 @@ gulp.task('js', function () {
         //    })
         //)
         .pipe($.concat('main.min.js'))
-        .pipe(gulp.dest("./dist/scripts"))
+        .pipe(gulp.dest("dist/scripts"))
 });
 
 gulp.task('vendor', function () {
@@ -100,7 +100,7 @@ gulp.task('vendor', function () {
     ])
         .pipe($.concat('vendor.js'))
         //.pipe($.uglify())
-        .pipe(gulp.dest("./dist/scripts"));
+        .pipe(gulp.dest("dist/scripts"));
 });
 
 // Clean Output Directory
