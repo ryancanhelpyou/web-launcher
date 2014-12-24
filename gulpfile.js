@@ -94,9 +94,7 @@ gulp.task('js', function () {
 gulp.task('vendor', function () {
     return gulp.src([
         'bower_components/jquery/jquery.min.js',
-        'bower_components/modernizr/modernizr.js',
-        'bower_components/bigtext/dist/bigtext.js',
-        'bower_components/jquery-ui/jquery-ui.js'
+        'bower_components/modernizr/modernizr.js'
     ])
         .pipe($.concat('vendor.js'))
         //.pipe($.uglify())
