@@ -27,7 +27,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "modernizr": "~2.8.3",
-    "bourbon": "~4.0.2",
-    "neat": "~1.7.0"
+    "bourbon": "3.2.x",
+    "neat": "1.5.1"
   }
 }

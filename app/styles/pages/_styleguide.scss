@@ -7,7 +7,7 @@
 .page--styleguide {
 
   .container {
-    @include outer-container(864px);
+    @include outer-container();
     @include pad();
   }
   .container--snippet-toggle {

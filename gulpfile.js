@@ -97,7 +97,7 @@ gulp.task('vendor', function () {
         './bower_components/modernizr/modernizr.js'
     ])
         .pipe($.concat('vendor.js'))
-        //.pipe($.uglify())
+        .pipe($.uglify())
         .pipe(gulp.dest("dist/scripts"))
 });
 
