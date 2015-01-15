@@ -13,7 +13,6 @@
     "project",
     "sass",
     "jade",
-    "google",
     "bourbon"
   ],
   "license": "MIT",
