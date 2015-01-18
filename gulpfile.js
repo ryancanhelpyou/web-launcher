@@ -41,7 +41,9 @@ gulp.task('copy', function () {
         'node_modules/apache-server-configs/dist/.htaccess'
     ], {
         dot: true
-    }).pipe(gulp.dest('dist'))
+    })
+        .pipe($.changed('dist'))
+        .pipe(gulp.dest('dist'))
 });
 
 // Copy Web Fonts To Dist
@@ -50,6 +52,7 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('dist/fonts'))
 });
 
+
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
     // For best performance, don't add Sass partials to `gulp.src`
@@ -57,7 +60,7 @@ gulp.task('styles', function () {
         'app/styles/*.scss',
         'app/styles/**/*.css'
     ])
-        .pipe($.changed('styles', {extension: '.scss'}))
+        .pipe($.changed('styles'))
         .pipe($.sass({
             errLogToConsole: true,
             style: 'expanded',
@@ -65,8 +68,8 @@ gulp.task('styles', function () {
         }).on('error', console.error.bind(console))
     )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        //.pipe($.csso())
         .pipe(gulp.dest('dist/styles'))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('templates', function () {
@@ -107,7 +110,7 @@ gulp.task('clean', del.bind(null, ['dist']));
 // Build and serve the output from the dist build
 gulp.task('serve', function () {
     browserSync({
-        notify: false,
+        notify: true,
         // Run as an https by uncommenting 'https: true'
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
@@ -118,13 +121,20 @@ gulp.task('serve', function () {
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function () {
-    gulp.watch(['app/**/*.jade'], ["templates", reload]);
-    gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-    gulp.watch(['app/scripts/**/*.js'], ['js', reload]);
-    gulp.watch(['app/images/**/*'], reload);
-    gulp.watch(['app/*.html'], ['copy', reload]);
-});
+    gulp.watch(['app/**/*.jade'], ["templates"]);
+    gulp.watch(['app/styles/**/*.{scss,css}'], ['styles']);
+    gulp.watch(['app/scripts/**/*.js'], ['js']);
+    gulp.watch(['app/*.*', "!app/*.jade"], ['copy']);
+    gulp.watch(['app/images/**/*'], ["images"]);
+    gulp.watch(['app/fonts/**/*'], ["fonts"]);
 
+    //gulp.watch(['dist/styles/*.css'], reload({stream:true}));
+    //gulp.watch(['dist/scripts/**/*.js'], reload);
+    //gulp.watch(['dist/images/**/*'], reload);
+    //gulp.watch(['dist/*.html'], reload);
+
+    gulp.watch(['dist/**.*', "!dist/styles/**/*.css"], reload);
+});
 
 // Build Production Files, the Default Task
 gulp.task('default', ['build'], function (cb) {
