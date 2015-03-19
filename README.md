@@ -12,7 +12,7 @@ Next, run `bower install` to install the Bower packages that is used by Web Laun
 You are now ready to run `gulp` and get cracking with some front-endin'.
 
 ## Jade
-In Web Launcher you can use the templating language Jade instead of writing plain HTML (but you do not have to). The task runner, Gulp, will then be used to compile Jade files til HTML files. A few of the advantages of Jade is that its shorter and faster to write and that you can "extend" Jade files into each other (I recommend placing your websites header and footer in `layout/layout.jade`).
+In Web Launcher you can use the templating language Jade instead of writing plain HTML. The task runner, Gulp, will then be used to compile Jade files til HTML files. A few of the advantages of Jade is that its shorter and faster to write and that you can "extend" Jade files into each other (I recommend placing your website's header and footer in `/layout/layout.jade`).
 
 Read more about Jade [here](http://jade-lang.com/).
 
