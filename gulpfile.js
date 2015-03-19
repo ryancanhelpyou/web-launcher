@@ -22,16 +22,6 @@ var AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
 ];
 
-// Optimize Images
-gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
-        //.pipe($.cache($.imagemin({
-        //    progressive: true,
-        //    interlaced: true
-        //})))
-        .pipe(gulp.dest('./dist/images'));
-});
-
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
     return gulp.src([
@@ -85,11 +75,11 @@ gulp.task('templates', function () {
 
 gulp.task('js', function () {
     return gulp.src("./app/scripts/*.js")
-        //.pipe($.uglify()
-        //    .on('error', function (error) {
-        //        console.warn(error.message);
-        //    })
-        //)
+        .pipe($.uglify()
+            .on('error', function (error) {
+                console.warn(error.message);
+            })
+    )
         .pipe($.concat('main.min.js'))
         .pipe(gulp.dest("dist/scripts"))
 });
@@ -128,11 +118,6 @@ gulp.task('watch', function () {
     gulp.watch(['app/images/**/*'], ["images"]);
     gulp.watch(['app/fonts/**/*'], ["fonts"]);
 
-    //gulp.watch(['dist/styles/*.css'], reload({stream:true}));
-    //gulp.watch(['dist/scripts/**/*.js'], reload);
-    //gulp.watch(['dist/images/**/*'], reload);
-    //gulp.watch(['dist/*.html'], reload);
-
     gulp.watch(['dist/**.*', "!dist/styles/**/*.css"], reload);
 });
 
@@ -147,16 +132,15 @@ gulp.task('build', ['clean'], function (cb) {
     runSequence('styles', ['js', 'vendor', 'templates', 'images', 'fonts'], 'copy', cb);
 });
 
-// Run PageSpeed Insights
-// Update `url` below to the public URL for your site
-gulp.task('pagespeed', pagespeed.bind(null, {
-    // By default, we use the PageSpeed Insights
-    // free (no API key) tier. You can use a Google
-    // Developer API key if you have one. See
-    // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-    url: 'https://example.com',
-    strategy: 'mobile'
-}));
+// Optimize Images
+gulp.task('images', function () {
+    return gulp.src('app/images/**/*')
+        //.pipe($.cache($.imagemin({
+        //    progressive: true,
+        //    interlaced: true
+        //})))
+        .pipe(gulp.dest('./dist/images'));
+});
 
 // --- Heroku Task. Is only run when deployed to heroku.
 gulp.task('heroku', function () {
