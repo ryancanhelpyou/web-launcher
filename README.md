@@ -1,6 +1,6 @@
 # [ Web Launcher ](https://github.com/lkabell/web-launcher)
 
-Kickstart web projects with Bourbon, Neat, Gulp, Bower, Sass, Jade, a simple styleguide and more. Web Launcher combines useful modern development tools in a boilerplate project and includes cherry-picked elements and inspiration from other great web scaffolding projects like [Google's Web Starter Kit](https://developers.google.com/web/starter-kit/) and [chriskjaer's Prototype Seed](https://github.com/chriskjaer/prototype-seed).
+Kickstart front-end web projects with a finetuned toolbox including Bourbon, Neat, Gulp, Sass, Jade, BrowserSync, Autoprefixer and a simple styleguide. Web Launcher combines useful modern development tools in one boilerplate project and includes cherry-picked elements from other great web scaffolding projects like [Google's Web Starter Kit](https://developers.google.com/web/starter-kit/) and [chriskjaer's Prototype Seed](https://github.com/chriskjaer/prototype-seed).
 
 ## Get started
 You need to have [Node.js](https://nodejs.org/) installed to use the Web Launcher. After that, clone this repository to your computer and use it as the foundation of your next web project.
@@ -9,7 +9,7 @@ To get started, run `NPM install` in the root folder of your project. This insta
 
 Next, run `bower install` to install the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
 
-You are now ready to run `gulp` and get cracking with some front-endin'. 
+You are now ready to run `gulp` and get cracking with some front-endin'.
 
 ## Jade
 In Web Launcher you can use the templating language Jade instead of writing plain HTML (but you do not have to). The task runner, Gulp, will then be used to compile Jade files til HTML files. A few of the advantages of Jade is that its shorter and faster to write and that you can "extend" Jade files into each other (I recommend placing your websites header and footer in `layout/layout.jade`).
@@ -29,22 +29,32 @@ Bourbon is a popular and lightweight mixin library for Sass. Use it as little or
 ### Neat
 Neat a simple, semantic (meaning not class-based) grid system for Sass. It is built on top of Bourbon, and like Bourbon it has a big community of users and great [documentation](http://thoughtbot.github.io/neat-docs/latest/) and [examples](http://neat.bourbon.io/examples/).
 
-### Plain CSS
+## Use additional JS libraries with Bower
+
+Out of the box Web Launcher includes [jQuery](http://jquery.com/) and [Modernizr](http://modernizr.com/), but it is likely that you will want to add additional libraries like eg. AngularJS or Backbone.js. You can download these as Bower packages by running `bower install package` where `package` is the Bower package you want to install. You can search for Bower packages in a web interface [at the Bower website](http://bower.io/search/).
+
+After downloadinng a Bower package, you have to adjust the `vendor` Gulp task to include the JS file from the package in the `/bower_components` folder. These libraries will be combined into one, compressed file called `vendor.js`.
+
+
+## Plain CSS
 
 If you need to, you can write plain CSS files and place them in the `/app/styles` folder. These CSS files will be copied and placed alongside the `main.css` file.
 
 ## gulp
-Web Launcher uses Gulp as task runner. To get started, all you need to do is run `gulp` which will start the default task. This tasks will
+Web Launcher uses Gulp as task runner. To get started, all you need to do is run `gulp` which will start the default task. This task will
 * Start a local server and open your website in the browser
 * Refresh the browser when files change
 * Compiles Jade and Sass files, when they are changed
-* Minifies and concatinates JS-files
+* Add the needed vendor prefixes to CSS rules (change the `AUTOPREFIXER_BROWSERS` variable in the `gulpfile.js` according to your desired browser support).
+* Minify and concatinate JS-files
 * Copies everything in the root level of the `app` folder to the `/dist` folder
 
 You can see all Gulp tasks in the `gulpfile.js` in the root of the project. Learn more about Gulp and find Gulp plugins [here](http://gulpjs.com/).
 
 ## File structure
-In Web launcher, all the files that will be edited is in the `/app` folder. This includes Sass files, Jade files, JS files, images, fonts and HTML files (if you include any). The Gulp tasks will process all the Sass/Jade/JS/etc. and output the production files to the `dist` folder. All other files at the root level of `app` will just be copied to the root level of `dist`.
+In Web launcher, all the files that will be edited is in the `/app` folder. This includes Sass files, Jade files, JS files, images, fonts and HTML files (if you include any).
+
+The Gulp tasks will process all the Sass/Jade/JS/etc. and output the production files to the `dist` folder. All other files at the root level of `app` will just be copied to the root level of `dist`.
 
 ## Styleguide
 
@@ -81,5 +91,15 @@ Do not forget to also edit the "table of contents" in the top of the page, that 
  
 
 ## Heroku
-- Link + guide
 
+Web Launcher includes a simple Express web server,`server.js`, that will serve your project when you have deployed to Heroku. The `Procfile` tells Heroku to use `package.json` that runs the Heroku task in the `gulpfile.js` which launches the web server and serves the files in `/dist`.
+
+If you are want to deploy your project to Heroku, but have not tried it before, this is an easy way to do it:
+* Create [heroku account](https://signup.heroku.com/) (or use your company's account if your at work).
+* Install [heroku toolbelt](https://toolbelt.heroku.com/), run the `heroku` command and login using your Heroku credentials.
+* Create a [new app for your project](https://dashboard.heroku.com/new) in the web interface.
+* Run `heroku git:remote -a project` where `project` is the name of your Heroku project.
+* Now you can use git to deploy the master branch of your project by running `git push heroku master`.
+* Visit your app at `project.herokuapp.com` where, again, `project` is the name of your Heroku project.
+
+You can learn more about the possibilities with Heroku [here](https://devcenter.heroku.com/start).
