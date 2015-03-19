@@ -21,7 +21,7 @@ If you want, you can also write normal HTML files - or include a mix of Jade and
 ## Sass
 The CSS preprocessor in Web Launcher is Sass and we use the [libsass](http://libsass.org/) variant since it does not require Ruby and is much faster than the Ruby version. Read more about Sass [here](http://sass-lang.com/).
 
-Sass files are separated in the folders `/pages`, `/modules`, `/utilities` and `/base`. The styles in `/base` contains the base styling from [Bitters](http://bitters.bourbon.io/) - change these styles as needed in your project. When adding new Sass files, remember to add a reference to it in `main.scss`. All Sass files will be compiled into one big CSS file called `main.css`
+Sass files are separated in the folders `/pages`, `/modules`, `/utilities` and `/base`. The styles in `/base` contains the base styling from [Bitters](http://bitters.bourbon.io/) - change these styles as needed in your project. When adding new Sass files, remember to add a reference to it in `main.scss`. All Sass files will be compiled into one big CSS file called `main.css`.
 
 #### Bourbon
 Bourbon is a popular and lightweight mixin library for Sass. Use it as little or as much as you wish. Since a lot of people use it, it is easy to find help online. Bourbon also has [excellent documentation](http://bourbon.io/docs/).
