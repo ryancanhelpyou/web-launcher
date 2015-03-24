@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": "~1.x",
     "modernizr": "~2.8.3",
     "bourbon": "3.2.x",
     "neat": "1.5.1"
