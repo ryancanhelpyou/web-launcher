@@ -119,7 +119,7 @@ gulp.task('watch', function () {
     gulp.watch(['app/images/**/*'], ["images"]);
     gulp.watch(['app/fonts/**/*'], ["fonts"]);
 
-    gulp.watch(['dist/**.*', "!dist/styles/**/*.css"], reload);
+    gulp.watch(['dist/**/*.*', "!dist/styles/**/*.css"], reload);
 });
 
 // Build Production Files, the Default Task
