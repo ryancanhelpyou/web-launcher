@@ -5,7 +5,7 @@ Kickstart front-end projects with a finetuned toolbox including Bourbon, Neat, G
 ## Get started
 You need to have the newest version of [Node.js](https://nodejs.org/) installed to use the Web Launcher. After that, clone this repository to your computer and use it as the foundation of your next web project.
 
-To get started, run `npm install` in the root folder of your project. This installs the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/). Automatically the command `bower install` will be run which installs the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
+To get started, run `npm install` in the root folder of your project. This installs the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/). Automatically, the command `bower install` will be run which installs the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
 
 You are now ready to run `gulp` and get cracking with some front-endin'.
 
