@@ -3,11 +3,9 @@
 Kickstart front-end projects with a finetuned toolbox including Bourbon, Neat, Gulp, Sass, Jade, BrowserSync, Autoprefixer and a simple styleguide. Web Launcher combines useful modern development tools in one boilerplate project and includes cherry-picked elements from great web scaffolding projects like [Google's Web Starter Kit](https://developers.google.com/web/starter-kit/) and [chriskjaer's Prototype Seed](https://github.com/chriskjaer/prototype-seed).
 
 ## Get started
-You need to have [Node.js](https://nodejs.org/) installed to use the Web Launcher. After that, clone this repository to your computer and use it as the foundation of your next web project.
+You need to have the newest version of [Node.js](https://nodejs.org/) installed to use the Web Launcher. After that, clone this repository to your computer and use it as the foundation of your next web project.
 
-To get started, run `npm install` in the root folder of your project. This installs the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/).
-
-Next, run `bower install` to install the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
+To get started, run `npm install` in the root folder of your project. This installs the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/). Automatically the command `bower install` will be run which installs the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
 
 You are now ready to run `gulp` and get cracking with some front-endin'.
 
