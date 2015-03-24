@@ -1,8 +1,8 @@
 @import 'utilities/normalize';
 
-@import "../../bower_components/bourbon/dist/bourbon";
+@import "bourbon";
 @import "base/grid-settings";
-@import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import 'neat';
 @import "base/base";
 
 // Bourbon prefix-setting (gulp-autoprefixer is prefixing for us)

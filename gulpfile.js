@@ -54,7 +54,8 @@ gulp.task('styles', function () {
         .pipe($.sass({
             errLogToConsole: true,
             style: 'expanded',
-            precision: 10
+            precision: 10,
+            includePaths: require('node-neat').includePaths
         }).on('error', console.error.bind(console))
     )
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
