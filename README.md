@@ -3,11 +3,14 @@
 Kickstart front-end projects with a finetuned toolbox including Bourbon, Neat, Gulp, Sass, Jade, BrowserSync, Autoprefixer and a simple styleguide. Web Launcher combines useful modern development tools in one boilerplate project and includes cherry-picked elements from great web scaffolding projects like [Google's Web Starter Kit](https://developers.google.com/web/starter-kit/) and [chriskjaer's Prototype Seed](https://github.com/chriskjaer/prototype-seed).
 
 ## Get started
-You need to have the newest version of [Node.js](https://nodejs.org/) installed to use the Web Launcher. After that, clone this repository to your computer and use it as the foundation of your next web project.
+You need to have the newest version of [Node.js](https://nodejs.org/) installed to use the Web Launcher. You also need to have Bower and Gulp installed globally - if you do not, run `npm install bower -g` and `npm install gulp -g`.
 
-To get started, run `npm install` in the root folder of your project. This installs the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/). Automatically, the command `bower install` will be run which installs the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
+Clone this repository to your computer and run `npm install` in the root folder. You are now ready to use Web Launcher as the foundation of your next web project.
 
-You are now ready to run `gulp` and get cracking with some front-endin'.
+Just run `gulp` and get cracking with some front-endin'.
+
+###### What just happened?
+The `npm install` command installed the node modules that Web Launcher requires. NPM is a package manager, that comes with Node.js - read more about it [here](https://www.npmjs.com/). Automatically, NPM ran the command `bower install` which installed the Bower packages that is used by Web Launcher. Bower is a front-end package manager and you can read more about [here](http://bower.io/).
 
 ## Jade
 In Web Launcher you can use the templating language Jade instead of writing plain HTML. The task runner, Gulp, will then be used to compile Jade files til HTML files. A few of the advantages of Jade is that its shorter and faster to write and that you can "extend" Jade files into each other (I recommend placing your website's header and footer in `/layout/layout.jade`).
@@ -21,22 +24,19 @@ The CSS preprocessor in Web Launcher is Sass and we use the [libsass](http://lib
 
 Sass files are separated in the folders `/pages`, `/modules`, `/utilities` and `/base`. The styles in `/base` contains the base styling from [Bitters](http://bitters.bourbon.io/) - change these styles as needed in your project. When adding new Sass files, remember to add a reference to it in `main.scss`. All Sass files will be compiled into one big CSS file called `main.css`.
 
-#### Bourbon
+###### Bourbon
 Bourbon is a popular and lightweight mixin library for Sass. Use it as little or as much as you wish. Since a lot of people use it, it is easy to find help online. Bourbon also has [excellent documentation](http://bourbon.io/docs/).
 
-#### Neat
+###### Neat
 Neat is a simple, semantic (meaning not class-based) grid system for Sass. It is built on top of Bourbon, and like Bourbon it has a big community of users and great [documentation](http://thoughtbot.github.io/neat-docs/latest/) and [examples](http://neat.bourbon.io/examples/).
 
-## Use additional JS libraries with Bower
+###### Plain CSS
+If you need to, you can write plain CSS files and place them in the `/app/styles` folder. These CSS files will be copied and placed alongside the `main.css` file.
 
+## Use additional JS libraries with Bower
 Out of the box Web Launcher includes [jQuery](http://jquery.com/) and [Modernizr](http://modernizr.com/), but it is likely that you will need to add additional libraries like AngularJS or Backbone.js. You can download these as Bower packages by running `bower install package` where `package` is the Bower package you want to install. You can search for Bower packages in a web interface [at the Bower website](http://bower.io/search/).
 
-After downloadinng a Bower package, you have to adjust the `vendor` Gulp task to include the JS file from the package in the `/bower_components` folder. These libraries will be combined into one, compressed file called `vendor.js`.
-
-
-## Plain CSS
-
-If you need to, you can write plain CSS files and place them in the `/app/styles` folder. These CSS files will be copied and placed alongside the `main.css` file.
+After downloading a Bower package, you have to adjust the `vendor` Gulp task to include the JS file from the package in the `/bower_components` folder. These libraries will be combined into one, compressed file called `vendor.js`.
 
 ## Gulp
 Web Launcher uses Gulp as task runner. To get started, all you need to do is run `gulp` which will start the default task. This task will
