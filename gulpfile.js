@@ -6,7 +6,6 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var pagespeed = require('psi');
 var server = require('./server');
 var reload = browserSync.reload;
 
