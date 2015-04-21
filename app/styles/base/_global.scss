@@ -44,9 +44,6 @@ main,
   @include pad();
   min-height: 100%;
   position: relative;
-  @include media($medium-screen-and-down) {
-    margin-top: 60px;
-  }
 }
 
 .container {

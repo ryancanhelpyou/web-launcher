@@ -1,11 +1,7 @@
-body.open {
-  overflow: hidden;
-}
 
-.app-bar {
+.header {
   display: block;
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   background-color: $color-primary;
@@ -13,227 +9,25 @@ body.open {
   z-index: 1;
 }
 
-.app-bar-container {
-  @include outer-container;
-  display: flex;
-  height: 60px;
-  position: relative;
-  flex-direction: row;
-}
-
-.app-bar.open,
-.app-bar.open ~ main {
-  transform: translate(250px, 0);
-}
-
-.app-bar .logo {
-  flex: 1;
-//  font-size: 2em;
-  line-height: 60px;
-  margin: 0 16px;
+.header .logo {
   padding: 0;
   color: $color-light;
-  float: none;
   max-width: none;
   display: initial;
+  float: left;
+  margin: 0;
 }
 
-.app-bar .logo a {
+.header .logo a {
   text-decoration: none;
   color: inherit;
   font-weight: normal;
 }
 
-.app-bar-actions {
-  display: flex;
-  flex-direction: row;
-  z-index: 2;
-}
-
-.app-bar button {
-  width: 60px;
-  height: 60px;
-  background-image: none;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  display: inline-block;
-  transition: background-color 0.2s ease-out;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.app-bar button img {
-  height: 35px;
-  width: 35px;
-  vertical-align: middle;
-}
-
-.app-bar button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.app-bar button:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: 0;
-}
-
-.app-bar button:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.promote-layer {
-  /*
-  This may promote the layer to a composited
-  layer.
-
-  Replace with will-change when available
-
-  #perfmatters
-  */
-  backface-visibility: hidden;
-}
-
-.navdrawer-container {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  height: 100%;
-  background-color: $color-primary;
-  color: #fefefe;
-  transform: translate(-250px, 0);
-  overflow-y: auto;
-}
-
-.navdrawer-container.open {
-  transform: translate(0, 0);
-}
-
-.app-bar,
-.navdrawer-container.opened,
-main {
-  transition: transform 0.3s ease-out;
-}
-
-.navdrawer-container h4,
-.navdrawer-container ul li a {
-  height: 60px;
-  padding: 17px 20px;
-  line-height: 1.4;
-}
-
-.navdrawer-container h4 {
-  background-color: $color-light;
-  color: $color-primary;
-}
-
-.navdrawer-container ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.navdrawer-container ul li a {
+.header::after {
+  content: ' ';
   display: block;
-  text-decoration: none;
-  color: white;
-  transition: background-color 0.2s ease-out;
-  white-space: nowrap;
-}
-
-.navdrawer-container ul li {
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: white;
-  padding: 0;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.navdrawer-container ul li::before {
-  content: none;
-}
-
-.navdrawer-container ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navdrawer-container ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.3);
-  outline: 0;
-}
-
-.navdrawer-container ul li a:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-/** Larger Screens - desktops and tablets **/
-@include media($large-screen) {
-  .app-bar {
-    position: relative;
-
-  }
-
-  .app-bar.open,
-  .app-bar.open ~ main {
-    transform: translate(0px, 0);
-  }
-
-  .app-bar-container {
-    display: block;
-    height: 130px;
-    box-sizing: border-box;
-    background-color: $color-primary;
-    @include pad(0 default);
-  }
-
-  .app-bar .logo {
-    float: left;
-    margin: 0;
-    padding: 0;
-    line-height: 130px;
-
-  }
-
-  .app-bar-actions {
-    float: right;
-  }
-
-  .app-bar::after {
-    content: ' ';
-    display: block;
-    height: 0;
-    overflow: hidden;
-    clear: both;
-  }
-
-  button.menu {
-    display: none;
-  }
-
-  .navdrawer-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 0;
-    transform: translate(0, 0);
-    transition: none;
-    overflow-y: auto;
-  }
-
-  .navdrawer-container h4 {
-    display: none;
-  }
-
-  .navdrawer-container ul {
-    @include outer-container;
-    @include pad(0 default);
-    display: flex;
-    flex-direction: row;
-  }
-
-  .navdrawer-container ul li {
-    border: none;
-  }
-
+  height: 0;
+  overflow: hidden;
+  clear: both;
 }

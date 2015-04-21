@@ -25,7 +25,7 @@
 
   }
   #snippet-toggle {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   .styleguide__color-list {
@@ -78,7 +78,10 @@
 
   .styleguide__lists {
     ul,
-    ol {
+    ol{
+      margin-bottom: $base-line-height;
+    }
+    h3 {
       margin-bottom: $base-line-height;
     }
   }
@@ -160,7 +163,7 @@
 
   & a {
     color: #ffffff;
-    font-weight: 300;
+    font-weight: 400;
     &:hover {
       text-decoration: underline;
     }

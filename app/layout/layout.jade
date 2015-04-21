@@ -31,22 +31,11 @@ html.no-js(lang='')
         script(src='scripts/vendor.js')
 
     body
-        header.app-bar.promote-layer
-            .app-bar-container
-                button.menu
-                    img(src='images/hamburger.svg', alt='Menu')
+        header.header
+            .main
                 h1.logo
                     | Web
                     strong Launcher
-                section.app-bar-actions
-                    // Put App Bar Buttons Here
-                    <button><i class="icon icon-star"></i></button>
-
-        nav.navdrawer-container.promote-layer
-            h4 Navigation
-            ul
-                li
-                    a(href='styleguide.html') Style Guide
 
         block content
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
