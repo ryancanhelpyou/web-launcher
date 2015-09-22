@@ -32,17 +32,10 @@ html.no-js(lang='')
 
     body
         header.header
-
             .main
                 h1.logo
                     | Web
                     strong Launcher
-        nav
-            ul
-                li: a(href='history.html') History
-                li: a(href='editors.html') Editors
-                li: a(href='contributor-guidelines.html') Contributor guidelines 
-                li: a(href='order.html') Ordering
 
         block content
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

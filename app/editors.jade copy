@@ -1,0 +1,76 @@
+extends layout/layout
+
+block title
+  title The editors | ARS ORIENTALIS 
+
+block content
+    main
+        h1 The editors | ARS ORIENTALIS
+
+        h2 Editor in Chief 
+        h3 Nancy Micklewright
+        p Nancy Micklewright, interim head of public and scholarly engagement, joined the staff of the Freer|Sackler in 2010. She oversees public programs for adults and family audiences, research and scholarly publications, and visitor engagement. Recently she collaborated with Johns Hopkins University students and F|S staff to produce the exhibition In Focus: Ara Güler’s Anatolia (2013). Before her arrival at the Freer|Sackler, she was senior program officer at the Getty Foundation (2001–10), where she was responsible for design and oversight of international grant programs supporting museum- and university-based programs in art history.
+        p Micklewright began her career as a professor of the history of Islamic art and architecture and the history of photography, teaching for twelve years at the University of Victoria in British Columbia, Canada. Her current research focuses on the history of photography in the Ottoman Empire, particularly Istanbul. She is the author of A Victorian Traveler in the Middle East: The Photography and Travel Writing of Annie Lady Brassey (2003) and the editor, with Reina Lewis, of Gender, Modernity and Liberty: Middle Eastern and Western Women’s Writings; A Critical Sourcebook (2006), as well as numerous articles. She has a BA, MA, and PhD from the University of Pennsylvania in the history of Islamic art and architecture.
+
+        h2 Advisory Board Member
+        h3 Debra Diamond
+        p Debra Diamond received her PhD in South Asian art history from Columbia University (2000). She is currently engaged with two exhibition projects that will open in 2017: the reinstallation of the Indian galleries at the Freer Gallery of Art and an exhibition of Buddhist art at the Sackler Gallery. She is also writing a collections guidebook. 
+        p Diamond most recently curated Yoga: The Art of Transformation (2013), which traveled to the Asian Art Museum in San Francisco and the Cleveland Museum of Art; both the exhibition and the accompanying catalogue received Awards of Excellence from the Association of Art Museum Curators. Among her other exhibitions are Worlds Within Worlds: Imperial Paintings from India and Iran (2012), Garden and Cosmos: Royal Painting of Jodhpur (2008–9), Perspectives: Simryn Gill (2006), and Autofocus: Raghubir Singh's Way into India (2003). In 2010, Diamond received the College Art Association’s Alfred H. Barr Jr. Award and the Smithsonian Secretary’s Research Prize for the Garden and Cosmos exhibition catalogue.
+
+        h2 Advisory Board Member 
+        h3 Jennifer Robertson
+        p Jennifer Robertson is professor of anthropology and the history of art at the University of Michigan, Ann Arbor. She has a non-budgeted appointment in the Department of Women's Studies and in the School of Art and Design. Robertson is a former director and member of the Center for Japanese Studies and an associate in the Science, Society and Technology Program and Center for Middle Eastern and North African Studies.
+        p Robertson is the originator and general editor of Colonialisms, a book series from the University of California Press that explores the historical realities, current significance, and future ramifications of imperialist practices with origins and boundaries outside of "the West." She is also a co-editor of Critical Asian Studies (criticalasianstudies.org). Her six books and dozens of articles and chapters address subjects dating from the seventeenth century to the present, including nativist and social rectification movements, agrarianism, sex and gender systems and ideologies, and mass and popular culture.
+        p Although her primary area specialty is Japan, where she has lived for about two decades, Robertson has also worked in Sri Lanka (1982–92) and has been working in Israel since 1997. In addition to her academic work, she makes collages, watercolors, serigraphs, ceramics, and oil paintings.
+
+        h2 Advisory Board Member 
+        h3 Louise Allison Cort
+        p Louise Allison Cort is curator for ceramics at the Freer|Sackler. Her interests include historical and contemporary ceramics in Japan, Southeast Asia, and South Asia; Japanese baskets and textiles; and chanoyu in Japan. 
+        p Cort is the author of Shigaraki, Potters’ Valley, published in 1979 and reprinted in 2000. In 2008, she prepared (with George Ashley Williams IV and David P. Rehfuss) the online catalogue Ceramics in Mainland Southeast Asia: Collections in the Freer Gallery of Art and Arthur M. Sackler Gallery. Her research on earthenware in India was published as Temple Potters of Puri (with Purna Chandra Mishra, 2012).
+        p Some of her other book-length publications include Isamu Noguchi and Modern Japanese Ceramics: A Close Embrace of the Earth (with Bert Winther-Tamaki, 2003) and Asian Traditions in Clay (with Ann Gunter and Massumeh Farhad, 2000). She was organizer and principal author for Korean Art in the Freer and Sackler Galleries (2013). With Andrew Watsky, she prepared the book and exhibition Chigusa and the Art of Tea (2014), on the story of the tea-leaf storage jar named Chigusa acquired by the Freer Gallery.
+        p In 2012, Cort received the thirty-third Koyama Fujio Memorial Prize for her research on historical and contemporary Japanese ceramics, and the Secretary’s Distinguished Research Lecture Award, Smithsonian Institution.
+
+        h2 Advisory Board Member 
+        h3 Marian Feldman
+        p Marian Feldman holds a joint appointment in the Departments of the History of Art and Near Eastern Studies at Johns Hopkins University. She received her PhD in art history at Harvard University in ancient Near Eastern art and concentrates on the arts of the second and first millennia BCE in the Near East and Eastern Mediterranean. Her interests range from questions regarding the role of the arts in cultural interactions to issues of style, object agency, and materiality.
+        p Feldman’s first book, Diplomacy by Design: Luxury Arts and an ‘International Style’ in the Ancient Near East, 1400–1200 BCE (Chicago 2006), investigates the role of artistic hybridity and luxury arts in international diplomacy during the Late Bronze Age. Her newest book, Communities of Style: Portable Luxury Arts, Identity and Collective Memory in the Iron Age Levant (Chicago 2014), examines the ways communities form around—and by means of—art objects, focusing on portable luxury items (in particular, ivory and metalwork) in the first half of the first millennium BCE. Feldman has also co-edited several volumes, including Critical Approaches to Ancient Near Eastern Art (with Brian A. Brown; De Gruyter 2013), and is the author of several articles and catalogue essays.
+        p Feldman taught in the History of Art and Near Eastern Studies Departments at the University of California, Berkeley, before coming to Johns Hopkins in 2013.
+
+        h2 Advisory Board Member 
+        h3 Nachiket Chanchani
+        p Nachiket Chanchani’s interests span many mediums, regions, and time periods. Currently, his research and writing about South Asian and Himalayan art, architecture, and visual culture has three main components: (1) investigating the expansion of sacred geographies, the movements of builders, and the creation of a mosaic of polities in the Central Himalayas and assessing how these activities intersected with stone temple construction and the development of sculptural form between the seventh and the twelfth century CE; (2) theorizing strategies to account for the production, dissemination, and performance of the linguistically hybrid and profusely painted scrolls and manuscripts of pre-Mughal western India; and (3) tracing the shadow of traditional Indian art, modern collections, and related scholarship on creative works of avant-garde Euro-American artists.
+        p Chanchani’s recently published journal articles include “From Asoda to Almora: Maru-Gurjara Architecture in the Central Himalayas” in Arts Asiatiques 69 (2014), “The Jageshwar Valley, Where Death is Conquered” in Archives of Asian Art 63.2 (2013), and “The Camera Work of Ananda Coomaraswamy and Alfred Stieglitz” in History of Photography 37.2 (2013). He has held a postdoctoral fellowship at the Freer|Sackler and a Nehru Trust fellowship at the Victoria and Albert Museum in London. He has also been involved with curatorial projects at the Philadelphia Museum of Art and the Museum of Fine Arts, Boston.
+
+        h2 Editor
+        h3 Jane Lusaka 
+        p 
+
+        h2 Managing Editor 
+        h3 Zeynep Simavi
+        p Zeynep Simavi joined the Freer|Sackler in 2011 as a research assistant. She worked on various research projects related to Ottoman art, focusing on the artistic exchange between the Ottomans and the Safavids; contemporary art, especially that of Turkey and Iran; and the formation of Islamic art in the United States. Her research on the Mehmet Ağa-Oğlu papers in the Freer|Sackler Archives led to a publication. 
+        p Simavi began to work in the Scholarly Programs and Publications Department in 2012. In addition to her work on the journal Ars Orientalis, she coordinates the museums’ fellows program and scholarly events. In 2013, she was on the curatorial team for the exhibition In Focus: Ara Güler’s Anatolia. She is currently a PhD candidate in art history at the Istanbul Technical University, continuing her research on the historiography of Islamic art. She has two master’s degrees, in media and cultural studies (2006) and in art and museum studies (2011).
+
+
+
+
+
+
+
+        p
+            | Check out the 
+            a(href='styleguide.html') Style Guide
+            | .
+
+        section.grid-test
+            .item
+                p Grid
+            .item
+                p Grid
+            .item
+                p Grid
+            .item
+                p Grid
+            .item
+                p Grid
+            .item
+                p Grid
